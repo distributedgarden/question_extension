@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 10px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+#answer {
+    margin-top: 10px;
+}

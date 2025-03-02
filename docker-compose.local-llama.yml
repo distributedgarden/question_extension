@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # The main Question Extension server
+  question-extension:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: question-extension 
+    ports:
+      - "5000:5000"
+    environment:
+      - LLM_PROVIDER=local
+      - LOCAL_LLM_URL=http://ollama:11434/api/generate
+      - LOCAL_LLM_MODEL=llama3
+      - RUST_LOG=info
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    networks:
+      - question-extension-network
+  
+  # Ollama service for hosting local Llama model
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - question-extension-network
+
+volumes:
+  ollama-data:
+    name: ollama-data
+
+networks:
+  question-extension-network:
+    driver: bridge

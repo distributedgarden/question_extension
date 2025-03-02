@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PDF LLM Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      min-width: 500px;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+    .selected-text-container {
+      margin-bottom: 15px;
+    }
+    .selected-text {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      max-height: 100px;
+      overflow: auto;
+      font-size: 14px;
+      border: 1px solid #ddd;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+    }
+    button {
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #askButton {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      margin-left: 10px;
+    }
+    #askButton:hover {
+      background-color: #3367d6;
+    }
+    #closeButton {
+      background-color: #f5f5f5;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+    #closeButton:hover {
+      background-color: #e5e5e5;
+    }
+    .loading {
+      margin: 15px 0;
+      font-style: italic;
+      color: #666;
+      display: none;
+    }
+    .response-container {
+      margin-top: 20px;
+      display: none;
+    }
+    .response-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .response-content {
+      background-color: #f0f7ff;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      border: 1px solid #d0e3ff;
+      max-height: 200px;
+      overflow: auto;
+    }
+    .error {
+      background-color: #fce8e6;
+      border-color: #f8ccc8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ask LLM about the highlighted text</h1>
+  
+  <div class="selected-text-container">
+    <label>Highlighted text:</label>
+    <div id="selectedText" class="selected-text">Loading...</div>
+  </div>
+  
+  <div id="loadingIndicator" class="loading">Loading response...</div>
+  
+  <div id="responseContainer" class="response-container">
+    <div class="response-title">Response:</div>
+    <div id="responseContent" class="response-content"></div>
+  </div>
+  
+  <div class="buttons">
+    <button id="closeButton">Close</button>
+    <button id="askButton">Ask</button>
+  </div>
+  
+  <script src="query.js"></script>
+</body>
+</html>

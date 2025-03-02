@@ -1,0 +1,51 @@
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Rust build artifacts
+/server/target/
+/server/Cargo.lock
+/server/**/*.rs.bk
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+app.log
+
+# Firefox Extension build artifacts
+/extension/web-ext-artifacts/
+/extension/node_modules/
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.dylib
+/dist/
+
+# Docker
+.docker/
+/volumes/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
