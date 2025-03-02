@@ -50,11 +50,7 @@ cargo build --release
 
 ### Installing the Firefox Extension
 
-1. [Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/question-extension/) (recommended)
-
-OR
-
-2. Load temporarily for development:
+#### Load temporarily for development:
    - Open Firefox and navigate to `about:debugging`
    - Click "This Firefox" in the sidebar
    - Click "Load Temporary Add-on..."
