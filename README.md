@@ -66,10 +66,3 @@ OR
 2. Highlight text in the PDF
 3. Right-click and select "Process this text with LLM"
 4. View the analysis in the popup window
-
-## Requirements
-
-### Server Requirements
-- OpenAI API key
-- Internet connection
-- 50MB RAM, minimal CPU usage

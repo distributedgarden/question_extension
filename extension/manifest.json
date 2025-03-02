@@ -1,12 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "PDF LLM Assistant",
+  "name": "Question Extension",
   "version": "1.0",
-  "description": "Ask an LLM questions about highlighted text in PDFs",
-  "icons": {
-    "48": "icons/icon-48.png",
-    "96": "icons/icon-96.png"
-  },
+  "description": "Ask an LLM questions about highlighted text",
   "permissions": [
     "activeTab",
     "contextMenus",
@@ -16,15 +12,13 @@
     "tabs"
   ],
   "browser_action": {
-    "default_icon": "icons/icon-48.png",
-    "default_title": "PDF LLM Assistant",
+    "default_title": "Question Extension",
     "default_popup": "popup/popup.html"
   },
   "background": {
     "scripts": ["background.js"]
   },
   "web_accessible_resources": [
-    "popup/query.html",
-    "icons/*"
+    "popup/query.html"
   ]
 }
