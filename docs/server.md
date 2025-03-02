@@ -157,24 +157,3 @@ The server logs to stdout by default. Log levels can be controlled via the `RUST
 # Set log level to debug
 RUST_LOG=debug ./question_extension
 ```
-
-## Performance Considerations
-
-- The server is lightweight and can handle multiple concurrent requests
-- Response time depends primarily on the LLM API's performance
-- The server uses connection pooling to optimize API requests
-
-## Security Considerations
-
-- The server doesn't implement authentication by default
-- Configure a firewall to restrict access to the server
-- Use HTTPS if exposing the server over the internet
-- Store API keys securely and never commit them to version control
-
-## Troubleshooting
-
-Common issues:
-
-1. **Connection refused**: Ensure the server is running and the port is not blocked
-2. **API key errors**: Verify your OpenAI API key is valid and properly configured
-3. **Response timeout**: The LLM API might be experiencing high load
